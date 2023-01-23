@@ -1,17 +1,19 @@
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
-This work was about * Udacity nanodegree program Machine Learning DevOps Engineer*.
-
-Objectives were to work for a property management company renting rooms and properties for short periods of 
+You are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. You need to estimate the typical price for a given property based 
 on the price of similar properties. Your company receives new data in bulk every week. The model needs 
 to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
 
 In this project you will build such a pipeline.
+Github link: [https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices](https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices)
+
+Wandb link: [https://wandb.ai/mamoutoufofana/nyc_airbnb?workspace=user-mamoutoufofana](https://wandb.ai/mamoutoufofana/nyc_airbnb?workspace=user-mamoutoufofana)
 
 ## Table of contents
 
 - [Introduction](#build-an-ML-Pipeline-for-Short-Term-Rental-Prices-in-NYC)
 - [Preliminary steps](#preliminary-steps)
+  * [Fork the Starter Kit](#fork-the-starter-kit)
   * [Create environment](#create-environment)
   * [Get API key for Weights and Biases](#get-api-key-for-weights-and-biases)
   * [Cookie cutter](#cookie-cutter)
@@ -33,15 +35,22 @@ In this project you will build such a pipeline.
 - [Cleaning up](#cleaning-up)
 
 ## Preliminary steps
-### Clone the repository
-Go to [https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices.git](https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices.git)
-Copy of the repository that is under your control. Now clone the repository locally so you can start working on it:
+### Fork the Starter kit
+Go to [https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices.git](https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices.git)
+and click on `Fork` in the upper right corner. This will create a fork in your Github account, i.e., a copy of the
+repository that is under your control. Now clone the repository locally so you can start working on it:
 
 ```
-git clone https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices.git
+git clone https://github.com/[your github username]/build-ml-pipeline-for-short-term-rental-prices.git
 ```
 
-You are your local repository.
+and go into the repository:
+
+```
+cd build-ml-pipeline-for-short-term-rental-prices
+```
+Commit and push to the repository often while you make progress towards the solution. Remember 
+to add meaningful commit messages.
 
 ### Create environment
 Make sure to have conda installed and ready, then create a new environment using the ``environment.yml``
@@ -163,11 +172,11 @@ _ = mlflow.run(
             )
 ```
 where `config['main']['components_repository']` is set to 
-[https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices#components](https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices/tree/main/components).
+[https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices#components](https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices/tree/main/components).
 You can see the parameters that they require by looking into their `MLproject` file:
 
-- `get_data`: downloads the data. [MLproject](https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices/tree/main/components/get_data/MLproject)
-- `train_val_test_split`: segrgate the data (splits the data) [MLproject](https://github.com/Mamoutou7/build-ml-pipeline-for-short-term-rental-prices/tree/main/components/train_val_test_split/MLproject)
+- `get_data`: downloads the data. [MLproject](https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices/blob/main/components/get_data/MLproject)
+- `train_val_test_split`: segrgate the data (splits the data) [MLproject](https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices/blob/main/components/train_val_test_split/MLproject)
 
 ## In case of errors
 When you make an error writing your `conda.yml` file, you might end up with an environment for the pipeline or one
